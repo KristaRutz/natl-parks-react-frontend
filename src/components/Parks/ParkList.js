@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function ParkList(props) {
  
-  const {parkList} = props;
+  const {parkList, onClickingNew} = props;
 
   return(
     <React.Fragment>
@@ -25,7 +25,9 @@ function ParkList(props) {
 }
 
 ParkList.propTypes = {
-  parkList: PropTypes.arrayOf(PropTypes.object)
+  parkList: PropTypes.arrayOf(PropTypes.object),
+  onParkSelection: PropTypes.func,
+  onClickingNew: PropTypes.func
 }
 
 export default ParkList;

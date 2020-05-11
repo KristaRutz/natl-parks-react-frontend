@@ -33,6 +33,8 @@
 
 Used previous project [ParkAPI](https://github.com/TSiu88/ParkAPI) and deployed to [Azure](http://park-info-api.azurewebsites.net/index.html).
 
+For this API, a user can add information and locations of parks found in the US.  The parks can be stored with a name, type (national or state), description, location/city, and state.  The database can be searched for these properties with the correct route structure.  States can also be stored in another table in the database and also holds the number of parks that are within that state.  The number of parks updates when parks are added, deleted, or modified.
+
 _README under construction_
 <!-- _Detailed desc w/ purpose/usage, what does, motivation to create, why exists, other info for users/developers to have_ -->
 
@@ -98,6 +100,22 @@ _README under construction_
 ## Specifications
 
 <!-- * _List of features the program should do, from simplest to more complex, handling all possible cases.  Can do as text or put in table, with example input and output -->
+
+<details>
+  <summary>Expand to view API Initial Specifications</summary>
+
+| Specification | Input | Output |
+| :-------------     | :------------- | :------------- |
+| The api displays a home screen with Swagger | Application start | Welcome screen displayed with all possible API calls |
+| The api is able to show all parks when GET method is used | GET http://localhost:5000/api/parks | Displays all parks with info |
+| The api is able to show all states when GET method is used | GET http://localhost:5000/api/states | Displays all states with info |
+| The api is able to show all national or state parks (or other properties) when GET method is used with parameters | GET http://localhost:5000/api/parks?type={national/state} | Displays all national or state parks with info |
+| The api is able to show all parks for a state when GET method is used with multiple parameters | GET http://localhost:5000/api/parks?state={stateName}&type={national/state} | Displays all state parks for that state with info |
+| The api is able to add parks with POST methods | POST http://localhost:5000/api/parks | Adds new park with provided info and increase count of parks for that state |
+| The api is able to edit/update existing parks with PUT method | PUT http://localhost:5000/api/{id} | Update existing park with provided info and correct counts of parks for that state |
+| The api is able to delete existing parks with DELETE method | DELETE http://localhost:5000/api/{id} | Delete park from database and decrease count of parks for that state |
+
+</details>
 
 <!-- <details>
   <summary>Click to expand to view Specifications</summary>

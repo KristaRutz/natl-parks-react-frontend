@@ -4,7 +4,7 @@ import NewParkForm from './NewParkForm';
 import EditParkForm from './EditParkForm';
 import ParkList from './ParkList';
 import ParkDetail from './ParkDetail';
-import { makeApiCallGetAll } from '../../actions';
+import { makeApiCallGetAll, makeApiCallPost } from '../../actions';
 
 class ParkControl extends React.Component {
   constructor(props){
@@ -30,6 +30,9 @@ class ParkControl extends React.Component {
 
   handleAddingNewParkToList = (newPark) => {
     //API post method
+    const { dispatch } = this.props;
+    dispatch(makeApiCallPost(newPark));
+    console.log(newPark);
     this.setState({newParkFormVisible: false});
   }
 
@@ -77,7 +80,7 @@ class ParkControl extends React.Component {
       return {
         component:
           <NewParkForm
-          onNewParkCreation = {this.handleAddingNewParkToList}
+          onFormSubmit = {this.handleAddingNewParkToList}
           />,
         buttonText: "Return to Main Page"
       }
@@ -87,6 +90,7 @@ class ParkControl extends React.Component {
           <ParkList
             parkList = {this.props.parks}
             onParkSelection = {this.handleChangingSelectedPark}
+            onClickingNew = {this.handleToggleAddParkForm}
           />,
         buttonText: "Add Park"
       }
@@ -94,13 +98,19 @@ class ParkControl extends React.Component {
   }
 
   render(){
-    const { error, isLoading, parks } = this.props;
+    const visibleState = this.setCurrentlyVisibleState();
+    const { error, isLoading } = this.props;
     if (error){
       return <React.Fragment>Error: {error.message}</React.Fragment>;
     } else if (isLoading) {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
-      return <ParkList parkList = {parks}/>;
+      return (
+        <React.Fragment>
+          <button onClick={this.handleToggleAddParkForm}>{visibleState.buttonText}</button>
+          {visibleState.component}
+        </React.Fragment>
+      )
     }
   }
 }

@@ -1,19 +1,19 @@
 import * as c from "./ActionTypes";
 
+// universal
 export const requestParks = () => ({
   type: c.REQUEST_PARKS
 })
+export const requestFailure = (error) => ({
+  type: c.REQUEST_FAILURE,
+  error
+})
 
+// GET request: all
 export const getParksSuccess = (parks) => ({
   type: c.GET_PARKS_SUCCESS,
   parks
 })
-
-export const getParksFailure = (error) => ({
-  type: c.GET_PARKS_FAILURE,
-  error
-})
-
 export const makeApiCallGetAll = () => {
   return dispatch => {
     dispatch(requestParks);
@@ -24,36 +24,28 @@ export const makeApiCallGetAll = () => {
           dispatch(getParksSuccess(jsonifiedResponse));
         })
       .catch((error) => {
-        dispatch(getParksFailure(error));
+        dispatch(requestFailure(error));
       });
   }
 }
 
-export const requestToPostPark = (park) => ({
-  type: c.REQUEST_TO_POST_PARK,
+// POST request: new park
+export const postParkSuccess = (park) => ({
+  type: c.POST_PARK_SUCCESS,
   park
-})
-export const postParkFailure = () => ({});
-export const postParkSuccess = () => ({});
-
+});
 export const makeApiCallPost = (park) => {
   return dispatch => {
-    dispatch(() => requestToPostPark(park));
-    const body = {
-        "Name": park.name,
-        "Type": park.type,
-        "Description": park.description,
-        "Location": park.location,
-        "StateId": park.stateId,
-    }
+    dispatch(requestParks);
     return fetch(`http://park-info-api.azurewebsites.net/api/Parks`, {
+      headers: {"Content-Type": "application/json"},
       method: 'POST',
-      body: body
-    }).then(response => response.json()).then(jsonifiedResponse => {
-      dispatch(postParkSuccess(jsonifiedResponse));
+      body: JSON.stringify(park)
+    }).then(response => { console.log(response);
+      // dispatch(postParkSuccess(park));
     })
     .catch(error => {
-      dispatch(postParkFailure(error));
+      dispatch(requestFailure(error));
     });
   }
 }
