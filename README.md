@@ -38,7 +38,7 @@ _README under construction_
 
 ### Component Diagram/Wireframe
 
-<!-- <img src="./public/component-diagram-wireframe.png"> -->
+<img src="./public/parkapi-componentdiagram.png">
 
 ### Database Structure
 
@@ -60,31 +60,13 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 * _Command Prompt_
 * _Web Browser_ -->
 
-<!-- #### Javascript
 * _Web Browser_
 * _Webpack_
 * _Node.js_
 * _NPM_
-* _API KEY_ -->
+
 
 ### Instructions
-
-<!-- *This application may be viewed by:*
-
-1. Download and install .NET Core from the [official website](https://dotnet.microsoft.com/download/dotnet-core/)
-2. Download and install MySQL Workbench and Community Server for Mac or Windows by following the instructions [here](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql).
-3. Click clone the [repository](https://github.com/TSiu88/#.git) from my [GitHub page](https://github.com/TSiu88) to copy the repository link
-4. Use a command line interface to type `git clone (repository-link-here)` to copy the project into the current folder and then move into the repository's directory that was just created with `cd (project-name-here)`
-5. Start up a local server by opening MySQL Workbench and adding a `MySQL Connections` using the default IP address and Port (IP 127.0.0.1, Port 3306), username (root), and password from setup.
-6. Construct the database by entering in the following lines under the `Query 1` section and then clicking execute:
-  >
-    CREATE DATABASE tiffany_siu;
-    USE tiffany_siu;
-    CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR(255));
-    CREATE TABLE clients (id serial PRIMARY KEY, description VARCHAR(255));
-7. Run `dotnet restore` and `dotnet build` in command line interface of the repository's main project directory
-8. Run `dotnet run` to start up the program in the command line interface
-9. Type the URL listed under "Now listening on:" into a web browser to run -->
 
 <!-- *This page may be viewed by:*
 
@@ -101,8 +83,6 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 4. Run `npm install` to get all dependencies. 
 5. Run `npm run start` to start up the program 
 6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. -->
-
-<!-- _This page may be viewed by cloning the [repository](https://github.com/TSiu88/#.git) from my [GitHub page](https://github.com/TSiu88) and opening the **index.html** file in any web browser._ -->
 
 <!-- _Other things need to run like servers, databases, code, how to install and use program_ -->
 
@@ -197,9 +177,7 @@ _There are currently no known bugs in this program_
 
 ## Support and contact details
 
-_If there are any question or concerns please contact me at my [email](mailto:tsiu88@gmail.com). Thank you._
-
-<!-- _If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com) and [Name](mailto:#). Thank you._ -->
+_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Adela Darmansyah](mailto:#), [Krista Rutz](mailto:rutzkri000@gmail.com), and [Andriy Veremyeyev](mailto:#). Thank you._
 
 ### License
 
