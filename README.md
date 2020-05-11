@@ -67,11 +67,12 @@ _README under construction_
 *This page may be viewed by:*
 
 1. Download and install Node.js from the [official website](https://nodejs.org/en/download/)
-2. Clone the [repository](https://github.com/ayohana/parks-redux.git) from my [GitHub page](https://github.com/TSiu88)
-3. Use a command line/Bash to move to the project directory with `cd project-directory`
-4. Run `npm install` to get all dependencies. 
-5. Run `npm run start` to start up the program 
-6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Install [CORS Unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en), a Chrome (or other browser) extension to prevent CORS errors.
+3. Clone the [repository](https://github.com/ayohana/parks-redux.git) from my [GitHub page](https://github.com/TSiu88)
+4. Use a command line/Bash to move to the project directory with `cd project-directory`
+5. Run `npm install` to get all dependencies. 
+6. Run `npm run start` to start up the program 
+7. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Other Technologies Used
 * _HTML_
@@ -89,6 +90,7 @@ _README under construction_
 * _Markdown_ 
 * _C#_
 * _.NET API_
+* _[CORS Unblock Browser Extension](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)_
 
 ## Notable Features
 <!-- _features that make project stand out_ -->

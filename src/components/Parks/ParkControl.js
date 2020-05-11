@@ -16,9 +16,81 @@ class ParkControl extends React.Component {
     }
   }
 
+  handleToggleAddParkForm = () =>{
+    if (this.state.selectedPark != null){
+      this.setState({newParkFormVisible: true, selectedPark: null});
+    } else {
+      this.setState({newParkFormVisible: !this.state.newParkFormVisible})
+    }
+  }
+
+  handleToggleEditParkForm = () =>{
+    this.setState({newParkFormVisible: false, editParkFormVisible: true});
+  }
+
+  handleAddingNewParkToList = (newPark) => {
+    //API post method
+    this.setState({newParkFormVisible: false});
+  }
+
+  handleEditingParkInList = (parkToEdit) => {
+    //API put method
+    this.setState({newParkFormVisible: false, editParkFormVisible: false, selectedPark: null});
+  }
+
+  handleChangingSelectedPark = (id) => {
+    const park = this.state.parks.filter(park => park.id === id)[0];
+    this.setState({newParkFormVisible: false, editParkFormVisible: false, selectedPark: park});
+  }
+
+  handleDeletingPark = (id) => {
+    //API delete method
+    this.setState({newParkFormVisible: false, selectedPark: null});
+  }
+
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(makeApiCallGetAll());
+  }
+
+  setCurrentlyVisibleState = () => {
+    if (this.state.editParkFormVisible){
+      return {
+        component:
+          <EditParkForm
+          park = {this.state.selectedPark}
+          onEditPark = {this.handleEditingParkInList}
+          />,
+        buttonText: "Return to Main Page"
+      }
+    } else if (this.state.selectedPark != null){
+      return {
+        component:
+          <ParkDetail
+            park = {this.state.selectedPark}
+            onClickingDelete = {this.handleDeletingPark}
+            onClickingEdit = {this.handleToggleEditParkForm}
+          />,
+        buttonText: "Return to Main Page"
+      }
+    } else if (this.state.newParkFormVisible){
+      return {
+        component:
+          <NewParkForm
+          onNewParkCreation = {this.handleAddingNewParkToList}
+          />,
+        buttonText: "Return to Main Page"
+      }
+    } else {
+      return {
+        component:
+          <ParkList
+            parkList = {this.props.parks}
+            onParkSelection = {this.handleChangingSelectedPark}
+          />,
+        buttonText: "Add Park"
+      }
+    }
   }
 
   render(){
@@ -28,19 +100,7 @@ class ParkControl extends React.Component {
     } else if (isLoading) {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
-      return (
-        <React.Fragment>
-          <h1>Parks</h1>
-          <ul>
-            {parks.map((park, index) =>
-            <li key={index}>
-              <h3>{park.name}</h3>
-              <p>{park.description}</p>
-            </li>
-            )}
-          </ul>
-        </React.Fragment>
-      );
+      return <ParkList parkList = {parks}/>;
     }
   }
 }
