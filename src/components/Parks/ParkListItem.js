@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 function ParkListItem(props) {
 
-  const {name, type, description, location, state, id }= props;
+  const {name, type, description, location, state, id, whenParkClicked }= props;
 
   return (
     <React.Fragment>
-      <div>
+      <div onClick = {() => whenParkClicked(id)}>
         <h3>{name}</h3>
         <h4>Type: {type}</h4>
         <h4>Location: {location} | {state}</h4>
@@ -24,6 +24,7 @@ ParkListItem.propTypes = {
   description: PropTypes.string,
   location: PropTypes.string,
   state: PropTypes.string,
-  id: PropTypes.number
+  id: PropTypes.number,
+  whenParkClicked: PropTypes.func
 }
 export default ParkListItem;

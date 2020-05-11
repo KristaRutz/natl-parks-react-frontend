@@ -34,6 +34,7 @@ class ParkControl extends React.Component {
     dispatch(makeApiCallPost(newPark));
     console.log(newPark);
     this.setState({newParkFormVisible: false});
+    dispatch(makeApiCallGetAll());
   }
 
   handleEditingParkInList = (parkToEdit) => {
@@ -116,7 +117,7 @@ class ParkControl extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return{
+  return {
     parks: state.parks,
     isLoading: state.isLoading,
     error: state.error

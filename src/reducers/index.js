@@ -22,14 +22,11 @@ export default (state = initialState, action) => {
         isLoading: false,
         error: action.error
       });
-    // case c.REQUEST_TO_POST_PARK:
-    //   return Object.assign({}, state, {
-    //     isLoading: true
-    //   })
     case c.POST_PARK_SUCCESS:
+      console.log("POST park was successful", action.park);
       return Object.assign({}, state, {
         isLoading: false,
-        parks: [...state.parks, action.park]
+        //parks: [...state.parks, action.park]
       });
     default:
       return state;

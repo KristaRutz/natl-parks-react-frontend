@@ -9,7 +9,7 @@ export const requestFailure = (error) => ({
   error
 })
 
-// GET request: all
+// GET request: 
 export const getParksSuccess = (parks) => ({
   type: c.GET_PARKS_SUCCESS,
   parks
@@ -29,6 +29,26 @@ export const makeApiCallGetAll = () => {
   }
 }
 
+// GET request: one by ID
+// export const getParkByIdSuccess = (parks) => ({
+//   type: c.GET_PARKS_SUCCESS,
+//   parks
+// })
+// export const makeApiCallGetAll = () => {
+//   return dispatch => {
+//     dispatch(requestParks);
+//     return fetch(`http://park-info-api.azurewebsites.net/api/Parks`)
+//       .then(response => response.json())
+//       .then(
+//         (jsonifiedResponse) => {
+//           dispatch(getParksSuccess(jsonifiedResponse));
+//         })
+//       .catch((error) => {
+//         dispatch(requestFailure(error));
+//       });
+//   }
+// }
+
 // POST request: new park
 export const postParkSuccess = (park) => ({
   type: c.POST_PARK_SUCCESS,
@@ -42,10 +62,11 @@ export const makeApiCallPost = (park) => {
       method: 'POST',
       body: JSON.stringify(park)
     }).then(response => { console.log(response);
-      // dispatch(postParkSuccess(park));
+      dispatch(postParkSuccess(park));
     })
     .catch(error => {
       dispatch(requestFailure(error));
     });
   }
 }
+

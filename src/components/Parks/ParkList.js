@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 
 function ParkList(props) {
  
-  const {parkList, onClickingNew} = props;
+  const {parkList, onClickingNew, onParkSelection} = props;
 
   return(
     <React.Fragment>
       <h1>Parks</h1>
       {parkList.map((park) => {
         return <ParkListItem 
+          whenParkCLicked = {onParkSelection}
           name={park.name}
           type={park.type}
           description={park.description}
