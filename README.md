@@ -1,14 +1,14 @@
-# _[Assignment Name](https://github.com/TSiu88/#)_
+# _[Parks](https://github.com/ayohana/parks-redux)_
 
-#### _Brief desc of Project, 05.11.2020_
+#### _React Redux with APIs Exercise, 05.11.2020_
 
 #### By _**Tiffany Siu, Adela Darmansyah, Krista Rutz, Andriy Veremyeyev**_
 
 <!-- [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) -->
 <!-- [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) -->
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-![LastCommit](https://img.shields.io/github/last-commit/tsiu88/#)
-![Languages](https://img.shields.io/github/languages/top/tsiu88/#)
+![LastCommit](https://img.shields.io/github/last-commit/ayohana/parks-redux)
+![Languages](https://img.shields.io/github/languages/top/ayohana/parks-redux)
 [![MIT license](https://img.shields.io/badge/License-MIT-orange.svg)](https://lbesson.mit-license.org/)
 
 ---
@@ -46,10 +46,6 @@ _README under construction_
 
 ## Setup/Installation Requirements
 
-<!-- _This program requires .NET Core SDK to run. [Here is a free tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-c-and-net) for installing .NET on Mac or Windows 10 from the [official website](https://dotnet.microsoft.com/download/dotnet-core/)._ 
-
-_This program also makes use of SQL databases. We recommend using MySQL Workbench to build your databases. [Here is a free tutorial](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql) for installing MySQL WorkBench and MySQL Community Server on Mac (using links [Mac1](https://dev.mysql.com/downloads/file/?id=484914) and [Mac2](https://dev.mysql.com/downloads/file/?id=484391)) or [Windows 10](https://dev.mysql.com/downloads/file/?id=484919)._ -->
-
 ### Requirements to Run
 <!-- #### C#
 * _.NET Core_
@@ -68,46 +64,31 @@ _This program also makes use of SQL databases. We recommend using MySQL Workbenc
 
 ### Instructions
 
-<!-- *This page may be viewed by:*
+*This page may be viewed by:*
 
-1. Download and install .NET Core from the [official website](https://dotnet.microsoft.com/download/dotnet-core/)
-2. Clone the [repository](https://github.com/TSiu88/#.git) from my [GitHub page](https://github.com/TSiu88)
-3. Use a command line interface to move to the repository's directory with `cd project-directory`
-4. Run `dotnet restore` and `dotnet build` in command line interface of the repository's directory
-5. Run `dotnet run` to start up the program in the command line interface
-6. Type the URL listed under "Now listening on:" into a web browser  -->
-
-<!-- 1. Download and install Node.js from the [official website](https://nodejs.org/en/download/)
-2. Clone the [repository](https://github.com/TSiu88/#.git) from my [GitHub page](https://github.com/TSiu88)
+1. Download and install Node.js from the [official website](https://nodejs.org/en/download/)
+2. Clone the [repository](https://github.com/ayohana/parks-redux.git) from my [GitHub page](https://github.com/TSiu88)
 3. Use a command line/Bash to move to the project directory with `cd project-directory`
 4. Run `npm install` to get all dependencies. 
 5. Run `npm run start` to start up the program 
-6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. -->
-
-<!-- _Other things need to run like servers, databases, code, how to install and use program_ -->
+6. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Other Technologies Used
-<!-- #### C#
-* _C#_
-* _HTML_
-* _CSS_
-* _MSTest_
-* _Razor_
-* _Markdown_ -->
-
-<!-- #### Javascript
 * _HTML_
 * _CSS_
 * _Javascript_
 * _React_
 * _Redux_
-* _Firebase_
-* _JQuery 3.4.1_
+* _Redux Thunk_
+* _Fetch Library_
+* _Azure_
 * _Bootstrap 4.4.1_
 * _ESLint_
 * _Babel_
 * _Jest_
-* _Markdown_ -->
+* _Markdown_ 
+* _C#_
+* _.NET API_
 
 ## Notable Features
 <!-- _features that make project stand out_ -->
