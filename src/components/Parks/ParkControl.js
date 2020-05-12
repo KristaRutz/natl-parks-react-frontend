@@ -108,7 +108,7 @@ class ParkControl extends React.Component {
     } else if (isLoading) {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
-      if (visibleState.buttonText == "Add Park"){
+      if (visibleState.buttonText === "Add Park"){
         return (
           <React.Fragment>
             <div class="ui animated fade button" tabindex="0" onClick={this.handleToggleAddParkForm}>

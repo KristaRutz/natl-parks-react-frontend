@@ -75,7 +75,6 @@ This project also contains Redux Thunk middleware, a custom written logger middl
 * _Redux Thunk_
 * _Fetch Library_
 * _Azure_
-* _Bootstrap 4.4.1_
 * _ESLint_
 * _Babel_
 * _Jest_
@@ -83,6 +82,8 @@ This project also contains Redux Thunk middleware, a custom written logger middl
 * _C#_
 * _.NET API_
 * _[CORS Unblock Browser Extension](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)_
+* _Semantic UI_
+* _[State Choropleth API](https://observablehq.com/@d3/state-choropleth)_
 
 ## Notable Features
 The database for this project is deployed in Azure while the front end was built in React locally and is able to make calls to the deployed API to modify the database.

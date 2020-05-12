@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { Form } from 'semantic-ui-react';
 
 function NewParkForm(props) {
   const handleAddingNewPark = event => {
@@ -22,8 +21,8 @@ function NewParkForm(props) {
   return (
   <>
   <div style={addFormStyle}>
-  <h2 class="ui header">Add a park to the database</h2>
-
+  <h2 class="ui header"><i aria-hidden="true" class="add icon"></i>
+Add a park to the database</h2>
  
   <div class='ui form'>
     <div class="eight wide field">
@@ -48,7 +47,7 @@ function NewParkForm(props) {
       </div>
       <div class="field">
       <label name="state">State:</label>
-        <select name="state" id="state">
+        <select class="ui search dropdown" name="state" id="state">
           <option defaultValue="0">Select a State</option>
           <option value="1">Alabama</option>
           <option value="2">Alaska</option>
