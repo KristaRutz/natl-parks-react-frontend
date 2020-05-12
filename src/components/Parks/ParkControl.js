@@ -108,12 +108,30 @@ class ParkControl extends React.Component {
     } else if (isLoading) {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
-      return (
-        <React.Fragment>
-          <button onClick={this.handleToggleAddParkForm}>{visibleState.buttonText}</button>
-          {visibleState.component}
-        </React.Fragment>
-      )
+      if (visibleState.buttonText == "Add Park"){
+        return (
+          <React.Fragment>
+            <div class="ui animated fade button" tabindex="0" onClick={this.handleToggleAddParkForm}>
+              <div class="visible content">{visibleState.buttonText}</div>
+              <div class="hidden content">
+                <i class="plus icon"></i>
+              </div>
+            </div>
+            {visibleState.component}
+          </React.Fragment>
+        )
+      } else {
+        return (
+          <React.Fragment>
+            <button class="ui labeled icon button" onClick={this.handleToggleAddParkForm}>
+              <i class="arrow circle left icon"></i>
+              {visibleState.buttonText}
+            </button>
+            {visibleState.component}
+          </React.Fragment>
+        )
+      }
+      
     }
   }
 }

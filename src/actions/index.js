@@ -28,6 +28,20 @@ export const makeApiCallGetAll = () => {
       });
   }
 }
+export const makeApiCallGetAllStates = () => {
+  return dispatch => {
+    dispatch(requestParks);
+    return fetch(`http://park-info-api.azurewebsites.net/api/States`)
+      .then(response => response.json())
+      .then(
+        (jsonifiedResponse) => {
+          dispatch(getParksSuccess(jsonifiedResponse));
+        })
+      .catch((error) => {
+        dispatch(requestFailure(error));
+      });
+  }
+}
 
 // POST request: new park
 export const makeApiCallPost = (park) => {

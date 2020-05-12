@@ -4,9 +4,9 @@
 
 #### By _**Tiffany Siu, Adela Darmansyah, Krista Rutz, Andriy Veremyeyev**_
 
+<!-- [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) -->
 <!-- [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) -->
-<!-- [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) -->
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 ![LastCommit](https://img.shields.io/github/last-commit/ayohana/parks-redux)
 ![Languages](https://img.shields.io/github/languages/top/ayohana/parks-redux)
 [![MIT license](https://img.shields.io/badge/License-MIT-orange.svg)](https://lbesson.mit-license.org/)
@@ -31,12 +31,11 @@
 ---
 ## Description
 
-Used previous project [ParkAPI](https://github.com/TSiu88/ParkAPI) and deployed to [Azure](http://park-info-api.azurewebsites.net/index.html).
+This is a front-end web application with full CRUD functionality. A user can view a list of all parks, add a new park, edit and delete an existing park. This application uses [ParkAPI](https://github.com/TSiu88/ParkAPI), a previously built C#/.NET API project, as the back-end that was deployed to [Azure](http://park-info-api.azurewebsites.net/index.html).
 
-For this API, a user can add information and locations of parks found in the US.  The parks can be stored with a name, type (national or state), description, location/city, and state.  The database can be searched for these properties with the correct route structure.  States can also be stored in another table in the database and also holds the number of parks that are within that state.  The number of parks updates when parks are added, deleted, or modified.
+For the back-end API, a user can add information and locations of parks found in the US. The parks can be stored with a name, type (national or state), description, location/city, and state. The database can be searched for these properties with the correct route structure. States can also be stored in another table in the database and also holds the number of parks that are within that state. The number of parks updates when parks are added, deleted, or modified.
 
-_README under construction_
-<!-- _Detailed desc w/ purpose/usage, what does, motivation to create, why exists, other info for users/developers to have_ -->
+This project also contains Redux Thunk middleware, a custom written logger middleware, and uses the Fetch library.
 
 ### Component Diagram/Wireframe
 
@@ -49,20 +48,13 @@ _README under construction_
 ## Setup/Installation Requirements
 
 ### Requirements to Run
-<!-- #### C#
-* _.NET Core_
-* _ASP.NET Core MVC_
-* _MySQL Workbench_
-* _MySQL Community Server_
-* _Entity Framework_
-* _Command Prompt_
-* _Web Browser_ -->
 
 * _Web Browser_
 * _Webpack_
 * _Node.js_
 * _NPM_
-
+* _React_
+* _Redux_
 
 ### Instructions
 
@@ -73,15 +65,13 @@ _README under construction_
 3. Clone the [repository](https://github.com/ayohana/parks-redux.git) from my [GitHub page](https://github.com/TSiu88)
 4. Use a command line/Bash to move to the project directory with `cd project-directory`
 5. Run `npm install` to get all dependencies. 
-6. Run `npm run start` to start up the program 
+6. Run `npm start` to start up the program 
 7. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Other Technologies Used
 * _HTML_
 * _CSS_
 * _Javascript_
-* _React_
-* _Redux_
 * _Redux Thunk_
 * _Fetch Library_
 * _Azure_
@@ -95,14 +85,12 @@ _README under construction_
 * _[CORS Unblock Browser Extension](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)_
 
 ## Notable Features
-<!-- _features that make project stand out_ -->
+The database for this project is deployed in Azure while the front end was built in React locally and is able to make calls to the deployed API to modify the database.
 
 ## Specifications
 
-<!-- * _List of features the program should do, from simplest to more complex, handling all possible cases.  Can do as text or put in table, with example input and output -->
-
 <details>
-  <summary>Expand to view API Initial Specifications</summary>
+  <summary>Expand to view API Specifications</summary>
 
 | Specification | Input | Output |
 | :-------------     | :------------- | :------------- |
@@ -163,8 +151,7 @@ _Here is a preview of what the output looks like:_
 <!-- _{Show pictures using ![alt text](image.jpg), show what library does as concisely as possible but don't need to explain how project solves problem from `code`_ -->
 
 ## Test Case Examples
-<!-- _Tests are done through MSTest and are run from the command line prompt with `dotnet test` from the `ProjectName.Tests` directory. -->
-<!-- _Tests are done through Jest and are run from the command line prompt with `npm test`._ -->
+_Tests are done through Jest and are run from the command line prompt with `npm test`._
 
 <!-- _Some example tests:_
 
@@ -180,7 +167,7 @@ _There are currently no known bugs in this program_
 
 ## Support and contact details
 
-_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Adela Darmansyah](mailto:#), [Krista Rutz](mailto:rutzkri000@gmail.com), and [Andriy Veremyeyev](mailto:#). Thank you._
+_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Adela Darmansyah](mailto:adela.yohana@gmail.com), [Krista Rutz](mailto:rutzkri000@gmail.com), and [Andriy Veremyeyev](mailto:#). Thank you._
 
 ### License
 
