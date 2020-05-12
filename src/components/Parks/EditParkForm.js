@@ -19,16 +19,16 @@ function EditParkForm(props) {
     <h1>Edit park in the database</h1>
     <form onSubmit={handleEditingPark}>
       <label name="parkName">Park Name:</label>
-      <input type="text" name="parkName" placeholder="Full name of park (e.g. 'Pinnacles National Park')" required/>
+      <input type="text" name="parkName" placeholder="Full name of park (e.g. 'Pinnacles National Park')" defaultValue={props.parkName} required/>
       <br />
       <label name="type">National or State?:</label>
-      <input type="text" name="type" placeholder="Type of park (e.g. 'national', 'state')" required/>
+      <input type="text" name="type" placeholder="Type of park (e.g. 'national', 'state')" defaultValue={props.type} required/>
       <br />
       <label name="description">Description:</label>
-      <textarea name="description" placeholder="A description of the geographical features and recreation options in this park" required/>
+      <textarea name="description" placeholder="A description of the geographical features and recreation options in this park" defaultValue={props.description} required/>
       <br />
       <label name="location">Location:</label>
-      <input type="text" name="location" placeholder="Location within state, as city or region" required/>
+      <input type="text" name="location" placeholder="Location within state, as city or region" defaultValue={props.location} required/>
       <br />
       <label name="state">State:</label>
       <select name="state" id="state">

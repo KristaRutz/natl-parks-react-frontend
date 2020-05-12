@@ -35,7 +35,6 @@ class ParkControl extends React.Component {
     dispatch(makeApiCallPost(newPark));
     console.log("after post call", this.props.parks);
     this.setState({newParkFormVisible: false});
-    // dispatch(makeApiCallGetAll());
   }
 
   handleEditingParkInList = (parkToEdit) => {

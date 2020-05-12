@@ -50,9 +50,9 @@ export const makeApiCallGetAll = () => {
 // }
 
 // POST request: new park
-export const postParkSuccess = (park) => ({
+export const postParkSuccess = (parks) => ({
   type: c.POST_PARK_SUCCESS,
-  park
+  parks
 });
 export const makeApiCallPost = (park) => {
   return dispatch => {
@@ -61,10 +61,11 @@ export const makeApiCallPost = (park) => {
       headers: {"Content-Type": "application/json"},
       method: 'POST',
       body: JSON.stringify(park)
-    }).then(response => { console.log(response);
+    }).then(response => response.json())
+    .then(jsonifiedResponse => { console.log("JSONIFIED RESPONSE: ", jsonifiedResponse);
       // request the latest park added to the SQL database, and then dispatch it on next line!
       // currently park = form object, is incomplete.
-      dispatch(postParkSuccess(park));
+      dispatch(postParkSuccess(jsonifiedResponse));
     })
     .catch(error => {
       dispatch(requestFailure(error));

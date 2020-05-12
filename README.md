@@ -1,6 +1,6 @@
 # _[Parks](https://github.com/ayohana/parks-redux)_
 
-#### _React Redux with APIs Exercise, 05.11.2020_
+#### _React Redux with APIs Exercise, 05.11.2020 - 05.12.2020_
 
 #### By _**Tiffany Siu, Adela Darmansyah, Krista Rutz, Andriy Veremyeyev**_
 
@@ -110,6 +110,8 @@ _README under construction_
 | The api is able to show all parks when GET method is used | GET http://localhost:5000/api/parks | Displays all parks with info |
 | The api is able to show all states when GET method is used | GET http://localhost:5000/api/states | Displays all states with info |
 | The api is able to show all national or state parks (or other properties) when GET method is used with parameters | GET http://localhost:5000/api/parks?type={national/state} | Displays all national or state parks with info |
+| The api is able to show all national or state parks (or other properties) when GET method is used with a general search | GET http://localhost:5000/api/parks/search | Displays all national or state parks with info matching search |
+| The api is able to show 3 random parks when GET method | GET http://localhost:5000/api/parks/random | Displays 3 random parks with info |
 | The api is able to show all parks for a state when GET method is used with multiple parameters | GET http://localhost:5000/api/parks?state={stateName}&type={national/state} | Displays all state parks for that state with info |
 | The api is able to add parks with POST methods | POST http://localhost:5000/api/parks | Adds new park with provided info and increase count of parks for that state |
 | The api is able to edit/update existing parks with PUT method | PUT http://localhost:5000/api/{id} | Update existing park with provided info and correct counts of parks for that state |
