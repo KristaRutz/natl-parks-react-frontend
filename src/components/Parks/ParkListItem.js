@@ -11,7 +11,7 @@ function ParkListItem(props) {
         <h3>{name}</h3>
         <h4>Type: {type}</h4>
         <h4>Location: {location} | {state}</h4>
-        <p>{description}</p>
+        {/* <p>{description}</p> */}
         <hr />
       </div>
     </React.Fragment>

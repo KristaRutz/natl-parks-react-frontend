@@ -11,7 +11,7 @@ function ParkList(props) {
       <h1>Parks</h1>
       {parkList.map((park) => {
         return <ParkListItem 
-          whenParkCLicked = {onParkSelection}
+          whenParkClicked = {onParkSelection}
           name={park.name}
           type={park.type}
           description={park.description}

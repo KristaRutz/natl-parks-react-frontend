@@ -24,9 +24,17 @@ export default (state = initialState, action) => {
       });
     case c.POST_PARK_SUCCESS:
       console.log("POST park was successful", action.park);
+      // add the state by id into action.park
+      // add the next park id into action.park
+      const newParkList = state.parks.concat(action.park);
       return Object.assign({}, state, {
         isLoading: false,
-        //parks: [...state.parks, action.park]
+        parks: newParkList
+      });
+    case c.DELETE_PARK_SUCCESS:
+      console.log("inside DELETE park success");
+      return Object.assign({}, state, {
+        isLoading: false,
       });
     default:
       return state;

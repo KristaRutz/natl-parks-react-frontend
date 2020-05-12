@@ -62,7 +62,50 @@ export const makeApiCallPost = (park) => {
       method: 'POST',
       body: JSON.stringify(park)
     }).then(response => { console.log(response);
+      // request the latest park added to the SQL database, and then dispatch it on next line!
+      // currently park = form object, is incomplete.
       dispatch(postParkSuccess(park));
+    })
+    .catch(error => {
+      dispatch(requestFailure(error));
+    });
+  }
+}
+
+// PUT request: edit with ID
+export const putParkSuccess = (editedPark) => ({
+  type: c.PUT_PARK_SUCCESS,
+  park: editedPark
+})
+export const makeApiCallPut = (editedPark) => {
+  return dispatch => {
+    dispatch(requestParks);
+    return fetch(`http://park-info-api.azurewebsites.net/api/Parks`, {
+      headers: {"Content-Type": "application/json"},
+      method: 'PUT',
+      body: JSON.stringify(editedPark)
+    }).then(response => {
+      dispatch(putParkSuccess(editedPark));
+    }).catch(error => {
+      dispatch(requestFailure(error));
+    })
+  }
+}
+
+// DELETE request: remove park
+export const deleteParkSuccess = (park) => ({
+  type: c.DELETE_PARK_SUCCESS,
+  park
+});
+export const makeApiCallDelete = (park) => {
+  return dispatch => {
+    dispatch(requestParks);
+    return fetch(`http://park-info-api.azurewebsites.net/api/Parks`, {
+      headers: {"Content-Type": "application/json"},
+      method: 'DELETE',
+      body: JSON.stringify(park)
+    }).then(response => { console.log(response);
+      dispatch(deleteParkSuccess(park));
     })
     .catch(error => {
       dispatch(requestFailure(error));

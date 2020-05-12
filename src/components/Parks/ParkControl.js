@@ -4,7 +4,7 @@ import NewParkForm from './NewParkForm';
 import EditParkForm from './EditParkForm';
 import ParkList from './ParkList';
 import ParkDetail from './ParkDetail';
-import { makeApiCallGetAll, makeApiCallPost } from '../../actions';
+import { makeApiCallGetAll, makeApiCallPost, makeApiCallDelete } from '../../actions';
 
 class ParkControl extends React.Component {
   constructor(props){
@@ -18,10 +18,11 @@ class ParkControl extends React.Component {
 
   handleToggleAddParkForm = () =>{
     if (this.state.selectedPark != null){
-      this.setState({newParkFormVisible: true, selectedPark: null});
+      this.setState({newParkFormVisible: false, editParkFormVisible: false, selectedPark: null});
     } else {
       this.setState({newParkFormVisible: !this.state.newParkFormVisible})
     }
+    console.log(this.state.newParkFormVisible);
   }
 
   handleToggleEditParkForm = () =>{
@@ -32,9 +33,9 @@ class ParkControl extends React.Component {
     //API post method
     const { dispatch } = this.props;
     dispatch(makeApiCallPost(newPark));
-    console.log(newPark);
+    console.log("after post call", this.props.parks);
     this.setState({newParkFormVisible: false});
-    dispatch(makeApiCallGetAll());
+    // dispatch(makeApiCallGetAll());
   }
 
   handleEditingParkInList = (parkToEdit) => {
@@ -43,12 +44,15 @@ class ParkControl extends React.Component {
   }
 
   handleChangingSelectedPark = (id) => {
-    const park = this.state.parks.filter(park => park.id === id)[0];
+    const park = this.props.parks.filter(park => park.parkId === id)[0];
     this.setState({newParkFormVisible: false, editParkFormVisible: false, selectedPark: park});
   }
 
   handleDeletingPark = (id) => {
     //API delete method
+    const park = this.props.parks.filter(park => park.parkId === id)[0];
+    const { dispatch } = this.props;
+    dispatch(makeApiCallDelete(park));
     this.setState({newParkFormVisible: false, selectedPark: null});
   }
 
