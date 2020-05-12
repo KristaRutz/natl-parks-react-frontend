@@ -3,36 +3,38 @@ import PropTypes from "prop-types";
 
 function EditParkForm(props) {
 
+  const {park, onEditPark} = props;
+
   const handleEditingPark = event => {
     event.preventDefault();
     const parkToEdit = {
+      "parkId": park.parkId,
       "name": event.target.parkName.value,
       "type": event.target.type.value,
       "description": event.target.description.value,
       "location": event.target.location.value,
       "stateId": parseInt(event.target.state.value),
     }
-    props.onEditPark(parkToEdit);
+    onEditPark(parkToEdit);
   }
 
   return(<>
     <h1>Edit park in the database</h1>
     <form onSubmit={handleEditingPark}>
       <label name="parkName">Park Name:</label>
-      <input type="text" name="parkName" placeholder="Full name of park (e.g. 'Pinnacles National Park')" defaultValue={props.parkName} required/>
+      <input type="text" name="parkName" defaultValue={park.name} required/>
       <br />
       <label name="type">National or State?:</label>
-      <input type="text" name="type" placeholder="Type of park (e.g. 'national', 'state')" defaultValue={props.type} required/>
+      <input type="text" name="type" defaultValue={park.type} required/>
       <br />
       <label name="description">Description:</label>
-      <textarea name="description" placeholder="A description of the geographical features and recreation options in this park" defaultValue={props.description} required/>
+      <textarea name="description" defaultValue={park.description} required/>
       <br />
       <label name="location">Location:</label>
-      <input type="text" name="location" placeholder="Location within state, as city or region" defaultValue={props.location} required/>
+      <input type="text" name="location" defaultValue={park.location} required/>
       <br />
       <label name="state">State:</label>
-      <select name="state" id="state">
-        <option defaultValue="0">Select a State</option>
+      <select name="state" id="state" defaultValue={park.stateId}>
         {/* <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
         <option value="AZ">Arizona</option>
@@ -93,6 +95,7 @@ function EditParkForm(props) {
 }
 
 EditParkForm.propTypes = {
+  park: PropTypes.object,
   onEditPark: PropTypes.func
 }
 

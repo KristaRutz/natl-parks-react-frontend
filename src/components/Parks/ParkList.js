@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 function ParkList(props) {
  
   const {parkList, onClickingNew, onParkSelection} = props;
-  console.log("parkList in ParkList.js", parkList);
 
   return(
     <React.Fragment>
