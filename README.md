@@ -13,7 +13,6 @@
 ## Table of Contents
 1. [Description](#description)
     - [Component Diagram/Wireframe](#component-diagram/wireframe)
-    - [Database Structure](#database-structure)
 2. [Setup/Installation Requirements](#setup/installation-requirements)
     - [Requirements to Run](#requirements-to-run)
     - [Instructions](#instructions)
@@ -29,21 +28,21 @@
 ---
 ## Description
 
-This is a front-end web application with full CRUD functionality. A user can view a list of all parks, add a new park, edit and delete an existing park. This application uses [ParkAPI](https://github.com/TSiu88/ParkAPI), a previously built C#/.NET API project, as the back-end that was deployed to [Azure](http://park-info-api.azurewebsites.net/index.html).
+This is a front-end web application with full CRUD functionality. A user can view a list of all parks, add a new park, edit and delete an existing park. This application uses [ParkAPI](https://github.com/TSiu88/ParkAPI), a previously built C#/.NET API project, as the back-end that was deployed to [Azure](http://park-info-api.azurewebsites.net/index.html).  The project was deployed multiple times on Netlify when completed (links in Setup section).
+
+This project also contains Redux Thunk middleware, a custom written logger middleware, uses the Fetch library, and uses D3.js data visualization.
 
 For the back-end API, a user can add information and locations of parks found in the US. The parks can be stored with a name, type (national or state), description, location/city, and state. The database can be searched for these properties with the correct route structure. States can also be stored in another table in the database and also holds the number of parks that are within that state. The number of parks updates when parks are added, deleted, or modified.
-
-This project also contains Redux Thunk middleware, a custom written logger middleware, and uses the Fetch library.
 
 ### Component Diagram/Wireframe
 
 <img src="./public/parkapi-componentdiagram.png">
 
-### Database Structure
-
-<!-- <img src="./public/data-structure.png"> -->
-
 ## Setup/Installation Requirements
+
+Follow the instructions below to run this project locally.
+
+Otherwise, this project is also deployed on Netlify and ready-to-use from [Krista's repo](https://parks-api.netlify.app/), [Tiffany's repo](https://park-info-api.netlify.app/), [Adela's repo](https://final-react-week.netlify.app/), and [Andriy's repo](https://friendly-engelbart-8e49be.netlify.app/). We recommend using a **CORS blocker** app or [a Chrome extension like this](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en) to access the API, as the backend is not set to receive Cross-Origin requests, even when using our deployed sites.
 
 ### Requirements to Run
 
@@ -64,7 +63,7 @@ This project also contains Redux Thunk middleware, a custom written logger middl
 4. Use a command line/Bash to move to the project directory with `cd project-directory`
 5. Run `npm install` to get all dependencies. 
 6. Run `npm start` to start up the program 
-7. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+7. Open [http://localhost:3000](http://localhost:3000) to view it in the browser and turn on **CORS Unblock** to see the site.
 
 ## Other Technologies Used
 * _HTML_
@@ -80,13 +79,14 @@ This project also contains Redux Thunk middleware, a custom written logger middl
 * _Markdown_ 
 * _C#_
 * _.NET API_
+* _Netlify_
 * _[CORS Unblock Browser Extension](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)_
-* _Semantic UI_
+* _[Semantic UI](https://semantic-ui.com/)_
 * _[D3 Library](https://github.com/d3/d3/wiki)_
 * _[State Choropleth API](https://observablehq.com/@d3/state-choropleth)_
 
 ## Notable Features
-The database for this project is deployed in Azure while the front end was built in React locally and is able to make calls to the deployed API to modify the database.  It has a D3.js data visualization map that is color coded to number of parks in the database that is located in that state with tooltips.
+The database for this project is deployed in Azure while the front end was built in React locally and is able to make calls to the deployed API to modify the database.  It has a D3.js data visualization map that is color coded to number of parks in the database that is located in that state with tooltips that pop up with mouseover.  The resulting application was also deployed using Netlify on multiple accounts.
 
 ## Specifications
 
@@ -108,19 +108,6 @@ The database for this project is deployed in Azure while the front end was built
 
 </details>
 
-<!-- <details>
-  <summary>Click to expand to view Specifications</summary>
-
-| Specification | Input | Output |
-| :-------------     | :------------- | :------------- |
-| The program displays welcome message and menu with prices | Application start | Welcome message and menu displayed |
-| The program displays special deals in readable format | Application start | Special deals displayed ("Buy 2, get 1 free" "3 for $5") |
-| The program takes input of user that is not an integer, then assume 0 ordered | Bread="aaa", Pastry="" | Bread=0, Pastry=0 |
-| The program takes number of loaves of bread and pastries and displays totals | Bread=4, Pastry=4 | Bread=$20, Pastry=$8, Total=$28 |
-| If input qualifies for special deals, costs calculated using discounted price | Bread=3, Pastry=3 | Bread=$10, Pastry=$5, Total=$15 |
-
-</details> -->
-
 ### User Stories
 <!-- <details>
   <summary>Click to expand to view User Stories </summary> -->
@@ -133,23 +120,26 @@ The database for this project is deployed in Azure while the front end was built
 
 ## Screenshots
 
-<!-- _Here is a snippet of what the input looks like:_
+_Here is a snippet of what the homepage looks like:_
 
-![Snippet of input fields](img/snippet1.png)
+![Snippet of the homepage](./public/homepage-parks.jpg)
 
-_Here is a preview of what the output looks like:_
+_Here is a preview of what the park details look like:_
 
-![Snippet of output box](img/snippet2.png) -->
+![Snippet of park details](./public/park-details.jpeg)
 
-<!-- <details>
+<details>
   <summary>Expand to view More Screenshots </summary>
 
-  ![Snippet of input fields](img/snippet3.png)
+  _Here is a preview of what the park add form looks like:_
 
+  ![Snippet of park add form](./public/new-park-form.jpg)
 
-</details> -->
+  _Here is a preview of what the D3.js data visualization map and park list looks like:_
 
-<!-- _{Show pictures using ![alt text](image.jpg), show what library does as concisely as possible but don't need to explain how project solves problem from `code`_ -->
+  ![Snippet of data visualization map and park list](./public/park-list.jpg)
+
+</details>
 
 ## Test Case Examples
 _Tests are done through Jest and are run from the command line prompt with `npm test`._
@@ -169,7 +159,7 @@ Data Visualization requires refresh page to see most recent change to data
 
 ## Support and contact details
 
-_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Adela Darmansyah](mailto:adela.yohana@gmail.com), [Krista Rutz](mailto:rutzkri000@gmail.com), and [Andriy Veremyeyev](mailto:#). Thank you._
+_If there are any question or concerns please contact us at our emails: [Tiffany Siu](mailto:tsiu88@gmail.com), [Adela Darmansyah](mailto:adela.yohana@gmail.com), [Krista Rutz](mailto:rutzkri000@gmail.com), and [Andriy Veremyeyev](mailto:belyybrat@gmail.com). Thank you._
 
 ### License
 

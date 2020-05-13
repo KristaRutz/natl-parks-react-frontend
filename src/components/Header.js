@@ -10,6 +10,7 @@ function Header() {
         <h5 className="ui center aligned header">
           By Tiffany Siu, Adela Darmansyah, Krista Rutz, Andriy Veremyeyev
         </h5>
+        <h6>Note: If you get a NetworkError, please download and turn on a CORS Unblock extension in your browser!</h6>
         <div className="ui center aligned divider"></div>
       </div>
     </React.Fragment>
@@ -17,4 +18,3 @@ function Header() {
 }
 
 export default Header;
-
