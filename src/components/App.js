@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./Header";
 import ParkControl from "./Parks/ParkControl"; 
-import Map from "./Map";
+import MapComponent from "./Map.js";
 import RD3Component from "./RD3Component";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <React.Fragment>
       <div className="ui container">
         <Header />
-        <Map />
+        <MapComponent />
         <ParkControl />
       </div>
     </React.Fragment> 
