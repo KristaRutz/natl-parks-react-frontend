@@ -21,7 +21,7 @@ export const getStatesSuccess = (states) => ({
 export const makeApiCallGetAll = () => {
   return dispatch => {
     dispatch(requestParks);
-    return fetch(`http://park-info-api.azurewebsites.net/api/Parks`)
+    return fetch(`https://park-info-api.azurewebsites.net/api/Parks`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
@@ -35,7 +35,7 @@ export const makeApiCallGetAll = () => {
 export const makeApiCallGetAllStates = () => {
   return dispatch => {
     dispatch(requestParks);
-    return fetch(`http://park-info-api.azurewebsites.net/api/States`)
+    return fetch(`https://park-info-api.azurewebsites.net/api/States`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
@@ -51,7 +51,7 @@ export const makeApiCallGetAllStates = () => {
 export const makeApiCallPost = (park) => {
   return dispatch => {
     dispatch(requestParks);
-    return fetch(`http://park-info-api.azurewebsites.net/api/Parks`, {
+    return fetch(`https://park-info-api.azurewebsites.net/api/Parks`, {
       headers: {"Content-Type": "application/json"},
       method: 'POST',
       body: JSON.stringify(park)
@@ -70,7 +70,7 @@ export const makeApiCallPost = (park) => {
 export const makeApiCallPut = (editedPark) => {
   return dispatch => {
     dispatch(requestParks);
-    return fetch(`http://park-info-api.azurewebsites.net/api/Parks/${editedPark.parkId}`, {
+    return fetch(`https://park-info-api.azurewebsites.net/api/Parks/${editedPark.parkId}`, {
       headers: {"Content-Type": "application/json"},
       method: 'PUT',
       body: JSON.stringify(editedPark)
@@ -88,7 +88,7 @@ export const makeApiCallPut = (editedPark) => {
 export const makeApiCallDelete = (id) => {
   return dispatch => {
     dispatch(requestParks);
-    return fetch(`http://park-info-api.azurewebsites.net/api/Parks/${id}`, {
+    return fetch(`https://park-info-api.azurewebsites.net/api/Parks/${id}`, {
       headers: {"Content-Type": "application/json"},
       method: 'DELETE',
     })
