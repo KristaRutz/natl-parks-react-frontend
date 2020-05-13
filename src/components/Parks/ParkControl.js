@@ -16,6 +16,11 @@ class ParkControl extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(makeApiCallGetAll());
+  }
+
   handleToggleAddParkForm = () =>{
     if (this.state.selectedPark != null){
       this.setState({newParkFormVisible: false, editParkFormVisible: false, selectedPark: null});
@@ -54,10 +59,6 @@ class ParkControl extends React.Component {
     this.setState({newParkFormVisible: false, selectedPark: null});
   }
 
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(makeApiCallGetAll());
-  }
 
   setCurrentlyVisibleState = () => {
     if (this.state.editParkFormVisible){

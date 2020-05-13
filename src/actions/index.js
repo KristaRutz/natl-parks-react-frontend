@@ -12,6 +12,10 @@ export const getParksSuccess = (parks) => ({
   type: c.GET_PARKS_SUCCESS,
   parks
 })
+export const getStatesSuccess = (states) => ({
+  type: c.GET_STATES_SUCCESS,
+  states
+})
 
 // GET request: 
 export const makeApiCallGetAll = () => {
@@ -35,7 +39,7 @@ export const makeApiCallGetAllStates = () => {
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          dispatch(getParksSuccess(jsonifiedResponse));
+          dispatch(getStatesSuccess(jsonifiedResponse));
         })
       .catch((error) => {
         dispatch(requestFailure(error));
