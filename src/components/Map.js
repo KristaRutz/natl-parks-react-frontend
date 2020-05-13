@@ -17,8 +17,10 @@ var node = document.createElement('div');
 // The null projection simply takes each coordinate in the data and converts it to a pixel coordinate with no transform - input values are treated as pixel values. 
 const path = d3.geo.path().projection(null);
 
-var color = d3.scale.quantize()
-  // .domain[0, ])
+// var color = d3.scale.quantize()
+//   .domain([0, 51])
+var color = d3.scale.threshold()
+  .domain([0, 1, 3, 5, 10, 15, 20, 25, 30, 40, 50, 75, 100])
   .range(["#dcdcdc", "#d0d6cd", "#bdc9be", "#aabdaf", "#97b0a0", "#84a491", "#719782", "#5e8b73", "#4b7e64", "#387255", "#256546", "#125937", "#004d28"]);
 //var color = d3.scaleQuantize([1, 7], d3.schemeBlues[6]);
 //var color = "#808080";
@@ -41,7 +43,20 @@ const chart = (data) => {
     .selectAll("path")  
     .data(topojson.feature(us, us.objects.states).features)
     .enter().append("path")
-    .attr("fill", d => `${d.properties.name}`)
+    .attr("fill", function(d){
+      let number_parks;
+      data.forEach(state => {
+        if (state.name === d.properties.name){
+          number_parks = state.numberParks;
+        }
+      });
+      if(number_parks > 0) {
+        return "red";
+      } else {
+        return "blue";
+      }
+    })
+    // .attr("fill", d => color(d.numberParks))
     //.attr("fill", d => color) // added
     .attr("d", path)
     .append("title")
