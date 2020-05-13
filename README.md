@@ -1,6 +1,6 @@
 # _[Parks](https://github.com/ayohana/parks-redux)_
 
-#### _React Redux with APIs Exercise, 05.11.2020 - 05.12.2020_
+#### _React Redux with APIs Exercise, 05.11.2020 - 05.13.2020_
 
 #### By _**Tiffany Siu, Adela Darmansyah, Krista Rutz, Andriy Veremyeyev**_
 
@@ -75,6 +75,7 @@ This project also contains Redux Thunk middleware, a custom written logger middl
 * _Redux Thunk_
 * _Fetch Library_
 * _Azure_
+* _D3.js_
 * _ESLint_
 * _Babel_
 * _Jest_

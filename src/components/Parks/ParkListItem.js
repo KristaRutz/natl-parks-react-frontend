@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function ParkListItem(props) {
 
-  const {name, type, description, location, state, id, whenParkClicked }= props;
+  const {name, type, location, state, id, whenParkClicked }= props;
 
   return (
     <React.Fragment>
@@ -11,7 +11,6 @@ function ParkListItem(props) {
         <h3>{name}</h3>
         <h4>Type: {type}</h4>
         <h4>Location: {location} | {state}</h4>
-        {/* <p>{description}</p> */}
         <hr />
       </div>
     </React.Fragment>

@@ -88,8 +88,8 @@ function EditParkForm(props) {
         <option value="51">Wyoming</option>
       </select>
       <br />
-      <button type="submit" class="ui labeled icon button">
-        <i class="save icon"></i>
+      <button type="submit" className="ui labeled icon button">
+        <i className="save icon"></i>
         Save Changes
       </button>
     </form>

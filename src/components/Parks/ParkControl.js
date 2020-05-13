@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {connect} from 'react-redux';
 import NewParkForm from './NewParkForm';
 import EditParkForm from './EditParkForm';
@@ -111,10 +111,10 @@ class ParkControl extends React.Component {
       if (visibleState.buttonText === "Add Park"){
         return (
           <React.Fragment>
-            <div class="ui animated fade button" tabindex="0" onClick={this.handleToggleAddParkForm}>
-              <div class="visible content">{visibleState.buttonText}</div>
-              <div class="hidden content">
-                <i class="plus icon"></i>
+            <div className="ui animated fade button" tabIndex="0" onClick={this.handleToggleAddParkForm}>
+              <div className="visible content">{visibleState.buttonText}</div>
+              <div className="hidden content">
+                <i className="plus icon"></i>
               </div>
             </div>
             {visibleState.component}
@@ -123,8 +123,8 @@ class ParkControl extends React.Component {
       } else {
         return (
           <React.Fragment>
-            <button class="ui labeled icon button" onClick={this.handleToggleAddParkForm}>
-              <i class="arrow circle left icon"></i>
+            <button className="ui labeled icon button" onClick={this.handleToggleAddParkForm}>
+              <i className="arrow circle left icon"></i>
               {visibleState.buttonText}
             </button>
             {visibleState.component}

@@ -21,18 +21,18 @@ function NewParkForm(props) {
   return (
   <>
   <div style={addFormStyle}>
-  <h2 class="ui header"><i aria-hidden="true" class="add icon"></i>
+  <h2 className="ui header"><i aria-hidden="true" className="add icon"></i>
 Add a park to the database</h2>
  
-  <div class='ui form'>
-    <div class="eight wide field">
+  <div className='ui form'>
+    <div className="eight wide field">
     <form onSubmit={handleAddingNewPark}>
-      <div class='field'>
+      <div className='field'>
           <label name="parkName">Park Name:</label>
           <input type="text" name="parkName" placeholder="Full name of park (e.g. 'Pinnacles National Park')" required/>
           <br />
       </div>
-      <div class='field'>
+      <div className='field'>
         <label name="type">National or State?:</label>
           <input type="text" name="type" placeholder="Type of park (e.g. 'national', 'state')" required/>
           <br />
@@ -40,14 +40,14 @@ Add a park to the database</h2>
           <textarea name="description" placeholder="A description of the geographical features and recreation options in this park" required/>
           <br />
       </div>
-      <div class="field">
+      <div className="field">
         <label name="location">Location:</label>
           <input type="text" name="location" placeholder="Location within state, as city or region" required/>
           <br />
       </div>
-      <div class="field">
+      <div className="field">
       <label name="state">State:</label>
-        <select class="ui search dropdown" name="state" id="state">
+        <select className="ui search dropdown" name="state" id="state">
           <option defaultValue="0">Select a State</option>
           <option value="1">Alabama</option>
           <option value="2">Alaska</option>
@@ -103,8 +103,8 @@ Add a park to the database</h2>
         </select>
         <br />
       </div>
-        <button type="submit" class="ui labeled icon button">
-          <i class="plus icon"></i>
+        <button type="submit" className="ui labeled icon button">
+          <i className="plus icon"></i>
           Add
         </button>
       </form>

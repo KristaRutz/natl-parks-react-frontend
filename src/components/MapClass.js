@@ -1,10 +1,10 @@
 import React from 'react';
 import rd3 from 'react-d3-library';
 import node from './Map';
+
 const RD3Component = rd3.Component;
 
 class MapClass extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {d3: ''}

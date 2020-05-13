@@ -1,9 +1,5 @@
 import React from "react";
 
-const addHeaderStyle = {
-  marginTop: '50px'
-}
-
 function Header() {
   return (
     <React.Fragment>

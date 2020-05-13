@@ -14,8 +14,8 @@ function ParkDetail(props) {
         <h4>Location: {park.location} | {park.state.name}</h4>
         <p>{park.description}</p>
         <hr />
-        <button class="ui primary button" onClick = {() => onClickingEdit()}>Edit Park Info</button>
-        <button class="ui secondary button" onClick = {() => onClickingDelete(park.parkId)} >Delete Park</button>
+        <button className="ui primary button" onClick = {() => onClickingEdit()}>Edit Park Info</button>
+        <button className="ui secondary button" onClick = {() => onClickingDelete(park.parkId)} >Delete Park</button>
       </div>
     </React.Fragment>
   )
