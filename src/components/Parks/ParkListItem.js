@@ -7,7 +7,7 @@ function ParkListItem(props) {
 
   return (
     <React.Fragment>
-      <div onClick = {() => whenParkClicked(id)}>
+      <div className="ui card" onClick = {() => whenParkClicked(id)}>
         <h3>{name}</h3>
         <h4>Type: {type}</h4>
         <h4>Location: {location} | {state}</h4>
