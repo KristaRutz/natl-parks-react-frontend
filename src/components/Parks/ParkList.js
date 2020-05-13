@@ -1,6 +1,7 @@
 import React from "react";
 import ParkListItem from './ParkListItem';
 import PropTypes from 'prop-types';
+import MapComponent from '../Map';
 
 function ParkList(props) {
  
@@ -8,8 +9,9 @@ function ParkList(props) {
 
   return(
     <React.Fragment>
-      <h1>Parks</h1>
-      {/* <div className="ui three cards"> */}
+      <h1 className="ui center aligned header">All Parks</h1>
+      <MapComponent />
+      <div className="ui three cards">
         {parkList.map((park) => {
             return <ParkListItem 
               whenParkClicked = {onParkSelection}
@@ -22,7 +24,7 @@ function ParkList(props) {
               key = {park.parkId} 
             />
           })}
-      {/* </div> */}
+      </div>
     </React.Fragment>
   )
 }

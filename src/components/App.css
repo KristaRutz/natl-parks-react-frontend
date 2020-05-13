@@ -1,3 +1,16 @@
+div.tooltip {
+  position: absolute;
+  left: 75px;
+  text-align: center;
+  height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  background: #FFFFFF;
+  border: 1px solid #989898;
+  pointer-events: none;
+}
+
+
 /* .App {
   text-align: center;
 }

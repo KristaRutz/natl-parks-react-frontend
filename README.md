@@ -4,9 +4,7 @@
 
 #### By _**Tiffany Siu, Adela Darmansyah, Krista Rutz, Andriy Veremyeyev**_
 
-<!-- [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) -->
-<!-- [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive) -->
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 ![LastCommit](https://img.shields.io/github/last-commit/ayohana/parks-redux)
 ![Languages](https://img.shields.io/github/languages/top/ayohana/parks-redux)
 [![MIT license](https://img.shields.io/badge/License-MIT-orange.svg)](https://lbesson.mit-license.org/)
@@ -84,10 +82,11 @@ This project also contains Redux Thunk middleware, a custom written logger middl
 * _.NET API_
 * _[CORS Unblock Browser Extension](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en)_
 * _Semantic UI_
+* _[D3 Library](https://github.com/d3/d3/wiki)_
 * _[State Choropleth API](https://observablehq.com/@d3/state-choropleth)_
 
 ## Notable Features
-The database for this project is deployed in Azure while the front end was built in React locally and is able to make calls to the deployed API to modify the database.
+The database for this project is deployed in Azure while the front end was built in React locally and is able to make calls to the deployed API to modify the database.  It has a D3.js data visualization map that is color coded to number of parks in the database that is located in that state with tooltips.
 
 ## Specifications
 
@@ -165,7 +164,8 @@ _Tests are done through Jest and are run from the command line prompt with `npm 
 
 ## Known Bugs
 
-_There are currently no known bugs in this program_
+Data Visualization requires refresh page to see most recent change to data
+<!-- _There are currently no known bugs in this program_ -->
 
 ## Support and contact details
 
