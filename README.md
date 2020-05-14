@@ -122,7 +122,7 @@ The database for this project is deployed in Azure while the front end was built
 
 _Here is a snippet of what the homepage looks like:_
 
-![Snippet of the homepage](./public/homepage-parks.jpg)
+![Snippet of the homepage](./public/homepage-parks.JPG)
 
 _Here is a preview of what the park details look like:_
 
@@ -133,11 +133,11 @@ _Here is a preview of what the park details look like:_
 
   _Here is a preview of what the park add form looks like:_
 
-  ![Snippet of park add form](./public/new-park-form.jpg)
+  ![Snippet of park add form](./public/new-park-form.JPG)
 
   _Here is a preview of what the D3.js data visualization map and park list looks like:_
 
-  ![Snippet of data visualization map and park list](./public/park-list.jpg)
+  ![Snippet of data visualization map and park list](./public/parks-list.JPG)
 
 </details>
 
